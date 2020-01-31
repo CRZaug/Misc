@@ -24,7 +24,4 @@ def f(vect):
 
 var = f(vector)
 
-if var is True:
-    print('yes')
-else:
-    print('no')
+print(bool(var))
