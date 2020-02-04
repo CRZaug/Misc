@@ -8,4 +8,10 @@ for i in range(100):
         print(n,'Buzz')
     else:
         print(n)
-    
+
+"""
+Lessons learned:
+1. This is an interview question apparently?
+2. Talk through thought process
+3. USE EXAMPLES
+"""

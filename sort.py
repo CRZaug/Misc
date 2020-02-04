@@ -25,3 +25,8 @@ def f(vect):
 var = f(vector)
 
 print(bool(var))
+
+"""
+Lessons learned:
+1. Recursion is cool; don't forget to return the result!
+"""

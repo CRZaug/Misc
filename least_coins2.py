@@ -29,5 +29,9 @@ print('Dollar amount: '+str(amount))
 print()
 least_coins(amount, coinvalues,coinnames)
 
-#print(198-175)
+"""
+Lessons learned:
+1. Floats create error even when it seems like they shouldn't
+2. Think about cases! This method would potentially break on other fictional coin systems
+"""
     

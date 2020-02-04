@@ -50,3 +50,11 @@ subresult = indexarray[:,index] # Pull the indices
 print(result,array[subresult[0]:subresult[1]])
 
 
+
+"""
+Lessons learned:
+1. Don't stay up too late coding; it's not actually productive!
+2. Listen to intuition
+3. Explore different forms of solutions
+4. Start with the brute force method, examine its flaws, determine how to improve it
+"""
