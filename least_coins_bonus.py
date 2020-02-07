@@ -24,6 +24,8 @@ Return value: ([number of coin 1, number of coin 2, number of coin 3,...], total
 This was the test case my original code broke on. But it works here.
 
 So on what case will this code break?
+    - apparently this will break if amount<max(coin)
+    - this breaks if all remainders = the number of 1c coins too
 
 And is there an easier way...?
 
@@ -32,7 +34,7 @@ import numpy as np
 
 
 def generate_money():
-    return np.random.randint(30,size=1)[0]
+    return np.random.randint(10,size=1)[0]
 
 
 # Create our money
@@ -47,7 +49,7 @@ def least_coins(amount, coinvalues):
     print()
     
     total_coins = [0]*len(coinvalues)
-    
+    amount =8
     while amount>0:
 
         modvect = []
@@ -58,9 +60,14 @@ def least_coins(amount, coinvalues):
             n = amount//coin # find the number of times coin goes into amount: N
             modvect.append(m)
             numbervect.append(n)
-
+        
+        print(modvect)
+        print(numbervect)
+        
         
         sum_vect = [modvect[i]+numbervect[i] for i in range(len(modvect))] # sum the remainder and N
+        print(sum_vect)
+        print()
 
         mmm = min(sum_vect) # find the min
         
