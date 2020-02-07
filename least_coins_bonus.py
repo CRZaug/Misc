@@ -24,7 +24,7 @@ Return value: ([number of coin 1, number of coin 2, number of coin 3,...], total
 This was the test case my original code broke on. But it works here.
 
 So on what case will this code break?
-    - apparently this will break if amount<max(coin)
+    - apparently this will break (sometimes) if amount<max(coin). For example: amount = 8
     - this breaks if all remainders = the number of 1c coins too
 
 And is there an easier way...?
@@ -49,7 +49,13 @@ def least_coins(amount, coinvalues):
     print()
     
     total_coins = [0]*len(coinvalues)
-    amount =8
+    #amount =8 ############### It breaks on this case
+    
+    # I could add a case to correct for this. Maybe.
+    #    If all the amount//coin is the same as another coin then use that other coin.
+    #    But I don't like how specific that sounds; I want to believe there is a more general way
+    #    Because what if it's a multiple of another coin or something instead?
+    #    This was indeed my concern from the beginning in a slightly different form so at least my intuition isn't totally wrong :P
     while amount>0:
 
         modvect = []
