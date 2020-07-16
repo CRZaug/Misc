@@ -15,14 +15,10 @@ bool isUnique(char* ptr){
 		return false;
 	}
 
-	//refPtr = (char*) malloc(128); // We're going to store something here!
-
 	for (int i=0; i<strLen; i++){
 		// not sure if it's truly necessary to write the next lines in two parts.
 		char c = ptr[i];
 		int a = c;
-		//printf("this is my index %i,\n",a);
-		//printf("this is the value at my index %i, \n", testArray[a]);
 		if (testArray[a]!=0){
 			return false;
 		}
