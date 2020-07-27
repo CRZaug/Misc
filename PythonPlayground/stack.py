@@ -1,45 +1,53 @@
 # Implement a stack in Python by hand, even though it's not really necessary since arrays do all these things for you.
+class StackNode:
+	def __init__(self,data):
+		self.data = data
+		self.next = StackNode	
 
-class Stack():
+class Stack:
 
 	def __init__(self):
-		self.stack = []
+		self.top = StackNode(None)
 	
-	def isEmpty(self,stack):
-		if len(self.stack) == 0:
+	def isEmpty(self,top):
+		if self.top.data == None:
 			return True
 	
 	def push(self,item):
-		self.stack.append(item)
-		return self.stack
+		self.temp = StackNode(item)
+		self.temp.next = self.top
+		self.top = self.temp
 
 	def pop(self):
-		if self.isEmpty(self.stack) == True:
-			return -Inf
+		if self.isEmpty(self.top) == True:
+			return False
+
 		else:
-			item = self.stack[-1]
-			self.stack = self.stack[:-1]
-		return item 
+			item = self.top.data
+			self.top =self.top.next 
+			return item
 
 	def peek(self):
-		
-		return self.stack[-1]
+		if self.isEmpty(self.top)==True:
+			return False
+		else:
+			return self.top.data
 
 	
 
 stack = Stack()
-
-print(stack.stack)
-stack.push(3)
-stack.push(4)
-stack.push(5)
-print(stack.stack)
-
-print()
-
 print(stack.peek())
-print(stack.pop())
-print(stack.stack)
+stack.push(3)
+print(stack.peek())
+stack.push(4)
+print(stack.peek())
+stack.push(5)
 
 
 
+
+
+print("stack")
+
+while stack.peek() !=False:
+	print(stack.pop())
