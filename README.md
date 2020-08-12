@@ -3,7 +3,7 @@
 
 ## Goal:
 
-Learn data structures and algorithms through _Cracking the Coding Interview_. Since Python was my first real language, many solutions are implemented in Python. However, I am trying to learn C and C++ as well, so some are implemented in these langagues as well.
+Learn data structures and algorithms through _Cracking the Coding Interview_. Since Python was my first real language, many solutions are implemented in Python. However, I am trying to learn C and C++ as well, so some are implemented in these languages as well.
 
 ## Problems:
 
