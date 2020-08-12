@@ -1,5 +1,5 @@
 
-# Data structures and Algorithms problems
+# Data structures and algorithms problems
 
 ## Goal:
 
