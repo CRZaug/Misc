@@ -33,7 +33,7 @@ Check if a string is unique (two solutions with different runtimes)
 
 Remove duplicates from a linked list
 
-#### isPermutation
+#### stringPermutation
 
 Check if two strings are permutations of one another
 
