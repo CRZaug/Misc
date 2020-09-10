@@ -1,4 +1,4 @@
-# Check if a vector is sorted using recursion
+# Check if an array is sorted using recursion
 
 import numpy as np
 

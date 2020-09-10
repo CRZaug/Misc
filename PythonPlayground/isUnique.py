@@ -1,4 +1,4 @@
-
+# This algorithm has O(N^2) runtime.
 
 def isUnique(s):
 
@@ -19,7 +19,7 @@ def isUnique(s):
 	return unique
 
 def main():
-	s = "hiboy"
+	s = "mystring"
 	print(isUnique(s))
 
 if __name__=="__main__":
