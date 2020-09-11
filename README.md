@@ -37,18 +37,22 @@ Remove duplicates from a linked list
 
 Check if two strings are permutations of one another
 
-### arrayJumps
+#### arrayJumps
 Figure out the minimum number of steps to make it to the end of an array. Moves
 can be made 1 or 2 places. Cannot "land" on 1.
 
-### repeatedChar
+#### repeatedChar
 Given an infinitely repeating string containing the letter a, find out how many
 times a appears in a substring of length n
 
-### swapSortArray
+#### swapSortArray
 Given an array in which a value can move forward (and only forward) only twice, changing 
 places with the value "ahead" of it, give the minimum number of swaps possible
 to sort the array. 
+
+#### mutualSubstring
+Determine if two strings have ANY mutual substring, including a single character.
+
 
 ### Data Structures
 
