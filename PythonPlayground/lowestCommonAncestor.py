@@ -45,36 +45,41 @@ class BinarySearchTree:
                     break
     
 
-        
 
-def postOrderTraversal2(root,v1,v2):
-    res = []
-    # pointer=None
+def postOrderTraversal2(root,v1,v2,counter=1,pointer=None):
+    # The goal is to count both children, and then immediately return whatever comes after them
     if root:
-        res = postOrderTraversal2(root.left,v1,v2)
-        res = res+ postOrderTraversal2(root.right,v1,v2)
+        (pointer,counter) = postOrderTraversal2(root.left,v1,v2,counter,pointer)
+        (pointer,counter) = postOrderTraversal2(root.right,v1,v2,counter,pointer)
+        
+        # Check this first, so that we don't update and then check the same thing
+        # If the counter is at 3, we've found our two child nodes already!
+        # So we can quickly update the pointer and the counter.
+        # This pointer is the pointer to the LCA
+        if counter==3:
+            pointer = root
+            counter+=1
+        
+        # If we see one child, update the counter
         if root.info == v1:
-            res.append(root)
+            print("v1")
+            counter+=1
+        # If we see another child, update the counter
         if root.info == v2:
-            res.append(root)
-        if len(res)==2:
-            res.append(root)
-            
-    return res
+            print("v2")
+            counter+=1
+        
+    return pointer, counter
         
 
 def lca(root, v1, v2):
 
     res = postOrderTraversal2(root,v1,v2)
     
-    # Nice! Now we have an array of pointers.
-    # res[0] is the pointer to v1, the smaller number
-    # res[1] is the pointer to v2, the larger number
-    # res[2] is the pointer to the lowest common ancestor!
+    # res gives the pointer and the counter
+    # res[0] is the pointer, which is what we want to return
     
-    # We also could have avoided using the array, but whatever for now.
-    
-    return res[2]
+    return res[0]
     
 
 tree = BinarySearchTree()
