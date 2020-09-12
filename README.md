@@ -53,6 +53,8 @@ to sort the array.
 #### mutualSubstring
 Determine if two strings have ANY mutual substring, including a single character.
 
+#### lowestCommonAncestor
+Determine the lowest common ancestor of two nodes in a binary search tree
 
 ### Data Structures
 
