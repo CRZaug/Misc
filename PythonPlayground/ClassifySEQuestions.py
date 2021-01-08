@@ -41,7 +41,7 @@ with open(filename) as fh:
         k+=1
         
 
-X = output[["excerpt","question"]]
+X = output.question
 
 y = output.topic
 
