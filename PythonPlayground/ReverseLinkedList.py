@@ -23,7 +23,6 @@ def createLinkedList(array):
         for k in range(2,len(array)):
             temp.next = LinkedListNode(array[k])
             temp = temp.next
-    
         return head
     elif len(array)==1:
         head = LinkedListNode(array[0])
@@ -70,7 +69,6 @@ def reverseLinkedList(head):
     counterEnd -=1
     counterBeg = 0
     
-    print(counterEnd)
 
 
     # Case 1: the total linked list is odd
@@ -112,14 +110,38 @@ def reverseLinkedList(head):
    
     return head
     
+
+def reverseLinkedList2(head):
+
+    curr = head
+    prev = None
+
+    while curr!=None:
+
+        nex = curr.next
+
+        curr.next = prev
+        prev = curr
+
+        curr=nex
+    
+    head= prev
+    
+    
+    return head
     
 if __name__ == "__main__":
     
-    linkedListHead = createLinkedList([1,2,3,4,5,6,7,8])
+    linkedListHead = createLinkedList([1,2,3,4,5])
     printLinkedList(linkedListHead)
-    rLL = reverseLinkedList(linkedListHead)
     
-    printLinkedList(rLL)
+    print()
+    
+    # rLL = reverseLinkedList(linkedListHead)
+    rLL2 = reverseLinkedList2(linkedListHead)
+    
+    printLinkedList(rLL2)
+    
     
     
     
