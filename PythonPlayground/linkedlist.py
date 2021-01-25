@@ -15,6 +15,28 @@ class LinkedList:
     def __init__(self):  
         self.head = None
         
+    def __repr__(self):
+        
+        nodes = []
+        
+        node = self.head
+        
+        while node is not None:
+            nodes.append(str(node.data))
+            node = node.next
+        
+        nodes.append("None")
+        
+        return " -> ".join(nodes)
+        
+    def __iter__(self):
+        
+        node = self.head
+        
+        while node is not None:
+            yield node
+            node = node.next
+    
     def printList(self):
         temp = self.head
         while (temp):
@@ -25,6 +47,7 @@ class LinkedList:
                 
             print (temp.data)
             temp = temp.next
+            
         
 
 
@@ -34,11 +57,18 @@ llist.head = Node(1)
 second = Node(2)
 third = Node(3)
 
+print(llist)
+
 llist.head.next = second
 second.next = third
 
 llist.printList()
+
+print(llist)
     
+
+for node in llist:
+    print(node)
     
 
     

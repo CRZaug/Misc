@@ -31,11 +31,11 @@ def checkVestigium(matrix):
         diag+=1
         
         
-        
         col = 0
         rowDict = {}
         for element in row:
             
+            # Check to see if there are any repeated values in the columns
             if col in columnsToCheck:
                 if columnDict[str(col)].count(element)==0:
                     columnDict[str(col)].append(element)
@@ -45,6 +45,7 @@ def checkVestigium(matrix):
                     columnsToCheck.remove(col)
             
             
+            # Check if there are any repeated values in the rows
             if str(element) not in rowDict:
                 rowDict[str(element)]=1
             elif rowDict[str(element)]==1:
@@ -52,9 +53,6 @@ def checkVestigium(matrix):
                 result[1]+=1
                 break
         
-        
-        
-
     
                     
             col+=1
