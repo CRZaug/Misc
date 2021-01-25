@@ -37,18 +37,59 @@ class LinkedList:
             yield node
             node = node.next
     
-    def printList(self):
+    def insertFirst(self,node):
+        node.next = self.head
+        self.head = node
+        
+    def insertLast(self,node):
+        
         temp = self.head
-        while (temp):
-            if temp.data == 1:
-                insert = temp.next
-                temp.next = Node(100)
-                temp.next.next = insert
-                
-            print (temp.data)
-            temp = temp.next
+        
+        while temp.next is not None:
+            
+            temp=temp.next
+            
+        temp.next = node
+        
+    def insertBefore(self,newNode,oldNodeData):
+        
+        temp = self.head
+        
+        while temp.next.data is not oldNodeData:
+            temp=temp.next
+        
+        temp2 = temp.next 
+        
+        temp.next = newNode
+        
+        newNode.next = temp2
+        
+        print(temp.data)
+        
+    def insertAfter(self,newNode,oldNodeData):
+        temp = self.head
+        
+        while temp.data is not oldNodeData:
+            temp=temp.next
+        
+        temp2 = temp.next 
+        
+        temp.next = newNode
+        
+        newNode.next = temp2
+        
+        print(temp.data)
+        
+    def removeNode(self,nodeData):
+        
+        temp = self.head
+        
+        while temp.next.data is not nodeData:
+            temp=temp.next
             
         
+        temp.next = temp.next.next
+    
 
 
 llist = LinkedList()
@@ -56,19 +97,27 @@ llist = LinkedList()
 llist.head = Node(1)
 second = Node(2)
 third = Node(3)
+fourth = Node(4)
+fifth = Node(5)
+sixth = Node("new")
+seventh = Node("second new")
 
-print(llist)
+
 
 llist.head.next = second
 second.next = third
 
-llist.printList()
+llist.insertFirst(fourth)
+
+
+    
+llist.insertLast(fifth)
+
+
+llist.insertBefore(sixth,2)
+llist.insertAfter(seventh,5)
+
+llist.removeNode(3)
 
 print(llist)
-    
-
-for node in llist:
-    print(node)
-    
-
     
