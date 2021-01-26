@@ -90,6 +90,17 @@ class LinkedList:
         
         temp.next = temp.next.next
     
+    def recursivelySum(self):
+        node = self.head
+        
+        return self.recursivelySumUtil(node)
+    
+    def recursivelySumUtil(self,node):
+        
+        if node == None:
+            return 0
+        else:
+            return node.data+self.recursivelySumUtil(node.next)
 
 
 llist = LinkedList()
@@ -106,6 +117,8 @@ seventh = Node("second new")
 
 llist.head.next = second
 second.next = third
+
+input(llist.recursivelySum())
 
 llist.insertFirst(fourth)
 
